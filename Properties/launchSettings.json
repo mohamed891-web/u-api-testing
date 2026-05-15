@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "UltivisionApi": {
+      "commandName": "Project",
+      "applicationUrl": "http://0.0.0.0:65084",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
