@@ -19,19 +19,7 @@ jobs:
       - name: Setup NodeJS
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-
-      - name: Verify Working Directory
-        run: |
-          echo Current Directory:
-          pwd
-          echo -------------------------
-          dir
-
-      - name: Verify Postman Folder
-        run: |
-          echo Checking Postman Folder
-          dir postman
+          node-version: 22
 
       - name: Install Newman
         run: npm install -g newman newman-reporter-html
@@ -39,17 +27,17 @@ jobs:
       - name: Create Reports Folder
         run: mkdir reports
 
-      - name: Run Postman Collection
-        run: >
-          newman run postman/UltivisionApi.postman_collection.json
-          -r cli,html
-          --reporter-html-export reports/newman-report.html
+      - name: Show Repository Files
+        run: dir
 
-      - name: Upload Newman Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: newman-report
-          path: reports/newman-report.html
+      - name: Show Postman Folder
+        run: dir postman
+
+      - name: Run Postman Collection
+        run: |
+          newman run postman/UltivisionApi.postman_collection.json `
+          -r cli,html `
+          --reporter-html-export reports/newman-report.html
 
   performance-testing:
 
@@ -60,23 +48,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Verify Working Directory
-        run: |
-          echo Current Directory:
-          pwd
-          echo -------------------------
-          dir
-
-      - name: Verify k6 Folder
-        run: |
-          echo Checking k6 Folder
-          dir k6
-
       - name: Install k6
         run: choco install k6 -y
 
-      - name: Verify k6 Installation
-        run: k6 version
+      - name: Show k6 Folder
+        run: dir k6
 
       - name: Run k6 Test
         run: |
