@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UltivisionApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53a99236d20c9001460a615e9a904c637d516210")]
 [assembly: System.Reflection.AssemblyProductAttribute("UltivisionApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UltivisionApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

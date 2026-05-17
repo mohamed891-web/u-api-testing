@@ -495,3 +495,4 @@ D:\WebPage using AI\Mobile\Oct26\ultivision-api-Desk2\obj\Debug\net9.0\refint\Ul
 D:\WebPage using AI\Mobile\Oct26\ultivision-api-Desk2\obj\Debug\net9.0\UltivisionApi.pdb
 D:\WebPage using AI\Mobile\Oct26\ultivision-api-Desk2\obj\Debug\net9.0\UltivisionApi.genruntimeconfig.cache
 D:\WebPage using AI\Mobile\Oct26\ultivision-api-Desk2\obj\Debug\net9.0\ref\UltivisionApi.dll
+D:\dev\ultivision-api-Desk2\obj\Debug\net9.0\UltivisionApi.sourcelink.json
