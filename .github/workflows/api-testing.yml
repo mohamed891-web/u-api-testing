@@ -33,42 +33,28 @@ jobs:
       - name: Show Postman Folder
         run: dir postman
 
-- name: Run Postman Collection
-  run: |
-    newman run postman/UltivisionApi.postman_collection.json `
-    --timeout-request 30000 `
-    --delay-request 100 `
-    -r cli,html `
-    --reporter-html-export reports/newman-report.html
+      - name: Run Postman Collection
+        run: |
+          newman run postman/UltivisionApi.postman_collection.json --timeout-request 30000 --delay-request 100 -r cli,html --reporter-html-export reports/newman-report.html
 
-performance-testing:
+  performance-testing:
 
-  runs-on: self-hosted
+    runs-on: self-hosted
 
-  steps:
+    steps:
 
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-    - name: Install k6
-      run: choco install k6 -y
+      - name: Install k6
+        run: choco install k6 -y
 
-    - name: Show Current Directory
-      run: pwd
+      - name: Show Current Directory
+        run: pwd
 
-    - name: Show k6 Files
-      run: dir k6
+      - name: Show k6 Files
+        run: dir k6
 
-    - name: Run k6 Test
-      run: |
-        k6 run .\k6\soak-test.js
-
- - name: Show Current Directory
-  run: pwd
-
-- name: Show k6 Files
-  run: dir k6
-
-- name: Run k6 Test
-  run: |
-    k6 run .\k6\soak-test.js
+      - name: Run k6 Test
+        run: |
+          k6 run .\k6\soak-test.js
