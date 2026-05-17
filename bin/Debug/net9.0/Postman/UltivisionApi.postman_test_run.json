@@ -1,0 +1,2554 @@
+{
+	"id": "c0c23e02-5b16-45e2-93bf-b4839c63a734",
+	"name": "UltivisionApi",
+	"timestamp": "2026-05-15T12:35:34.123Z",
+	"collection_id": "45953829-bd149b43-c56f-414a-9e1b-0ebf69ad3074",
+	"folder_id": "45953829-644fc14a-6e2a-4656-9952-93eada17138c",
+	"environment_id": "45953829-87390f3c-c11a-40b0-9a88-66c497ad8c3b",
+	"totalPass": 613,
+	"delay": 0,
+	"persist": true,
+	"status": "error",
+	"startedAt": "2026-05-15T12:35:15.670Z",
+	"totalFail": 350,
+	"results": [
+		{
+			"id": "584cd2a2-8b50-476d-a319-c59e340bfbf6",
+			"name": "Login",
+			"url": "http://localhost:65084/api/auth/login",
+			"time": 3,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false,
+				"Response received": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response body not empty": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response received": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				233,
+				59,
+				3
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true,
+					"Response received": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false,
+					"Response received": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false,
+					"Response received": true
+				}
+			]
+		},
+		{
+			"id": "8cc97037-50cb-472a-a47a-32327d11fc51",
+			"name": "Register",
+			"url": "http://localhost:65084/api/auth/register",
+			"time": 2,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				2,
+				2,
+				2
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "c25d1e23-8faa-4d05-aee7-9fe6a4e38cab",
+			"name": "Forgot Password",
+			"url": "http://localhost:65084/api/auth/forgot",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				4,
+				3,
+				4
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "7d02a43d-066a-4e3f-9f57-f05e1a148467",
+			"name": "Reset Password",
+			"url": "http://localhost:65084/api/auth/reset",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				3,
+				4,
+				3
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "5e75c83d-58de-4dd7-b8fa-5e054a8bc9f1",
+			"name": "/api/cart/:cartItemId",
+			"url": "http://localhost:65084/api/cart/1188",
+			"time": 2,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response body not empty": {
+					"pass": 0,
+					"fail": 5
+				}
+			},
+			"times": [
+				7,
+				3,
+				2
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "53b96d57-6006-41de-8a6e-96bc983dfd97",
+			"name": "/api/cart/:cartItemId",
+			"url": "http://localhost:65084/api/cart/1188",
+			"time": 2,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response body not empty": {
+					"pass": 0,
+					"fail": 5
+				}
+			},
+			"times": [
+				3,
+				2,
+				2
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "8b546c7a-cf60-43d2-8546-521c2b62206a",
+			"name": "/api/cart",
+			"url": "http://localhost:65084/api/cart",
+			"time": 2,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response body not empty": {
+					"pass": 1,
+					"fail": 4
+				}
+			},
+			"times": [
+				6,
+				2,
+				2
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "22b5a023-ae0f-4f00-ab6a-ff423a47fb8b",
+			"name": "/api/cart",
+			"url": "http://localhost:65084/api/cart",
+			"time": 2,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response body not empty": {
+					"pass": 1,
+					"fail": 4
+				}
+			},
+			"times": [
+				12,
+				2,
+				2
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "f970d380-65bd-4280-9b0f-3aa24a251b6b",
+			"name": "/api/orders/:orderId/cancel",
+			"url": "http://localhost:65084/api/orders/1188/cancel",
+			"time": 2,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response body not empty": {
+					"pass": 0,
+					"fail": 5
+				}
+			},
+			"times": [
+				7,
+				2,
+				2
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "3791d956-cb29-4516-8f3a-68692f6b1959",
+			"name": "/api/orders/:orderId/request-return",
+			"url": "http://localhost:65084/api/orders/1188/request-return",
+			"time": 1,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response body not empty": {
+					"pass": 0,
+					"fail": 5
+				}
+			},
+			"times": [
+				2,
+				2,
+				1
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "e8299e7b-2a6a-4e36-b0d9-891b94312f02",
+			"name": "/api/orders",
+			"url": "http://localhost:65084/api/orders",
+			"time": 2,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response body not empty": {
+					"pass": 1,
+					"fail": 4
+				}
+			},
+			"times": [
+				35,
+				2,
+				2
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "4d6382e0-4b70-49ff-ad9b-a32bcdd6bd2d",
+			"name": "/api/orders",
+			"url": "http://localhost:65084/api/orders",
+			"time": 2,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response body not empty": {
+					"pass": 1,
+					"fail": 4
+				}
+			},
+			"times": [
+				16,
+				2,
+				2
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "3721229c-2973-4e27-b1b4-818e86492961",
+			"name": "/api/products/categories",
+			"url": "http://localhost:65084/api/products/categories",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is successful": true,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				14,
+				6,
+				5
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "814aed8c-f7d0-41b7-8a1e-a6dbfde6d5e2",
+			"name": "/api/products/:productId/supplierinventory",
+			"url": "http://localhost:65084/api/products/1188/supplierinventory",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is successful": true,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				17,
+				4,
+				4
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "6c27a037-a69d-48b0-8b5e-d9e416f0160d",
+			"name": "/api/products/:productId",
+			"url": "http://localhost:65084/api/products/1188",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response body not empty": {
+					"pass": 0,
+					"fail": 5
+				}
+			},
+			"times": [
+				8,
+				3,
+				4
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "f0a36f24-5283-452b-8fb4-2e6de6fa8316",
+			"name": "/api/products",
+			"url": "http://localhost:65084/api/products?categoryId=1188&search=string&sort=string&page=1&pageSize=50",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is successful": true,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				22,
+				5,
+				5
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "ae878da4-251b-4dac-ae61-c863cbcffac8",
+			"name": "/api/addresses",
+			"url": "http://localhost:65084/api/addresses",
+			"time": 3,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response body not empty": {
+					"pass": 1,
+					"fail": 4
+				}
+			},
+			"times": [
+				5,
+				2,
+				3
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "9407f3db-1d34-47dc-8776-ca162e991715",
+			"name": "Get Rooms With Availability",
+			"url": "http://localhost:65084/api/bookings/apartments/string/rooms/availability?start=1987-12-20T13:56:03.781Z&end=1987-12-20T13:56:03.781Z",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is successful": true,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				10,
+				4,
+				10
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "d96eb3a6-bc37-41e9-8df0-7216bc3d1f4a",
+			"name": "Get Rooms For Apartment",
+			"url": "http://localhost:65084/api/bookings/apartments/string/rooms",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is successful": true,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				5,
+				3,
+				5
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "b54537b3-cfcc-4172-9b97-f9941bab14ba",
+			"name": "Get Apartment Details",
+			"url": "http://localhost:65084/api/bookings/apartments/string",
+			"time": 6,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				7,
+				5,
+				6
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "6b81c588-56bc-4a58-949e-398262269848",
+			"name": "Get Apartments",
+			"url": "http://localhost:65084/api/bookings/apartments",
+			"time": 24,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is successful": true,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				20,
+				14,
+				24
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "fcce944e-e49b-4b59-a2b4-4af2828baef6",
+			"name": "Check Room Availability",
+			"url": "http://localhost:65084/api/bookings/rooms/string/available?start=1987-12-20T13:56:03.781Z&end=1987-12-20T13:56:03.781Z",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is successful": true,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				34,
+				4,
+				4
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "7eb48530-dfdc-41af-8ea7-ca92dea72cc7",
+			"name": "Get Bookings By User",
+			"url": "http://localhost:65084/api/bookings/user/1188",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is successful": true,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				12,
+				5,
+				5
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "b73d06c7-237a-40c5-9d1e-9378d2d41648",
+			"name": "/api/bookings/multi",
+			"url": "http://localhost:65084/api/bookings/multi",
+			"time": 2,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				2,
+				2,
+				2
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "71a380d9-3875-4bce-bb13-16687f9139f1",
+			"name": "Cancel Booking Group Per Night",
+			"url": "http://localhost:65084/api/bookings/81af7326-9a97-e223-bc6c-b615890c543f/cancel",
+			"time": 3,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				4,
+				3,
+				3
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "6931dd4b-72b0-4b13-947a-328ccf74a5ee",
+			"name": "Get Booking By Id",
+			"url": "http://localhost:65084/api/bookings/81af7326-9a97-e223-bc6c-b615890c543f",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				8,
+				4,
+				4
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "e5ec0608-f471-4a06-9dc9-53aefc622f18",
+			"name": "Create Booking",
+			"url": "http://localhost:65084/api/bookings",
+			"time": 2,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				2,
+				2,
+				2
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "4b75fa11-24f9-461c-9d74-e13f571c63d6",
+			"name": "Get Booking Groups By User",
+			"url": "http://localhost:65084/api/bookinggroups/user/1188",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is successful": true,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				6,
+				4,
+				4
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "4e8ce723-1189-46bb-bb78-bd173618d9f2",
+			"name": "Remove Saved",
+			"url": "http://localhost:65084/api/saved/1188/string",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 4,
+					"fail": 1
+				},
+				"Response body not empty": {
+					"pass": 4,
+					"fail": 1
+				}
+			},
+			"times": [
+				2,
+				4,
+				3
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "bc3d148b-b513-4c31-b640-6eb8ff2df3a5",
+			"name": "Get Saved With Image And Meta",
+			"url": "http://localhost:65084/api/saved/1188",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is successful": true,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				6,
+				4,
+				4
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "2814ff29-6262-4300-a88c-082adc43d815",
+			"name": "Toggle Saved",
+			"url": "http://localhost:65084/api/saved/toggle",
+			"time": 8,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				7,
+				9,
+				8
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "72642844-0323-4b19-9f1c-480e63b25018",
+			"name": "Add Saved",
+			"url": "http://localhost:65084/api/saved",
+			"time": 5,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": true,
+				"Response body not empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response body not empty": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				9,
+				6,
+				5
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				}
+			]
+		},
+		{
+			"id": "e664a094-e439-4ad6-b8c8-b0f7bf1808ef",
+			"name": "/api/users/addresses/:id",
+			"url": "http://localhost:65084/api/users/addresses/1188",
+			"time": 2,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response body not empty": {
+					"pass": 0,
+					"fail": 5
+				}
+			},
+			"times": [
+				4,
+				2,
+				2
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "0bf1b4db-0886-4df4-96de-76889c8bbaf8",
+			"name": "/api/users/addresses/:id",
+			"url": "http://localhost:65084/api/users/addresses/1188",
+			"time": 2,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response body not empty": {
+					"pass": 0,
+					"fail": 5
+				}
+			},
+			"times": [
+				4,
+				2,
+				2
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "287e0ad6-a3f2-46fd-8636-06063f55f580",
+			"name": "/api/users/addresses",
+			"url": "http://localhost:65084/api/users/addresses",
+			"time": 3,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response body not empty": {
+					"pass": 1,
+					"fail": 4
+				}
+			},
+			"times": [
+				5,
+				2,
+				3
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "5265d00d-c93a-4b12-b386-6db20aa4f681",
+			"name": "/api/users/addresses",
+			"url": "http://localhost:65084/api/users/addresses",
+			"time": 2,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response body not empty": {
+					"pass": 1,
+					"fail": 4
+				}
+			},
+			"times": [
+				8,
+				2,
+				2
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "2c4c7a43-b661-4257-80a1-2fcae6054fe7",
+			"name": "/api/users/paymentmethods/:id",
+			"url": "http://localhost:65084/api/users/paymentmethods/1188",
+			"time": 2,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response body not empty": {
+					"pass": 0,
+					"fail": 5
+				}
+			},
+			"times": [
+				4,
+				2,
+				2
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "86425d40-5dbc-40cc-9eed-a7302b0db54d",
+			"name": "/api/users/paymentmethods/:id",
+			"url": "http://localhost:65084/api/users/paymentmethods/1188",
+			"time": 2,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Response body not empty": {
+					"pass": 0,
+					"fail": 5
+				}
+			},
+			"times": [
+				3,
+				2,
+				2
+			],
+			"allTests": [
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "01e8b72b-d9bb-465c-91cb-531d356c7846",
+			"name": "/api/users/paymentmethods",
+			"url": "http://localhost:65084/api/users/paymentmethods",
+			"time": 3,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response body not empty": {
+					"pass": 1,
+					"fail": 4
+				}
+			},
+			"times": [
+				5,
+				3,
+				3
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		},
+		{
+			"id": "b0ac9b71-c834-434d-8f11-b74997a9c5e6",
+			"name": "/api/users/paymentmethods",
+			"url": "http://localhost:65084/api/users/paymentmethods",
+			"time": 2,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is successful": false,
+				"Response time less than 5 seconds": true,
+				"Response is JSON": false,
+				"Response body not empty": false
+			},
+			"testPassFailCounts": {
+				"Status code is successful": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response time less than 5 seconds": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response is JSON": {
+					"pass": 1,
+					"fail": 4
+				},
+				"Response body not empty": {
+					"pass": 1,
+					"fail": 4
+				}
+			},
+			"times": [
+				6,
+				2,
+				2
+			],
+			"allTests": [
+				{
+					"Status code is successful": true,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": true,
+					"Response body not empty": true
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				},
+				{
+					"Status code is successful": false,
+					"Response time less than 5 seconds": true,
+					"Response is JSON": false,
+					"Response body not empty": false
+				}
+			]
+		}
+	],
+	"count": 3,
+	"totalTime": 919,
+	"collection": {
+		"requests": [
+			{
+				"id": "584cd2a2-8b50-476d-a319-c59e340bfbf6",
+				"method": "POST"
+			},
+			{
+				"id": "8cc97037-50cb-472a-a47a-32327d11fc51",
+				"method": "POST"
+			},
+			{
+				"id": "c25d1e23-8faa-4d05-aee7-9fe6a4e38cab",
+				"method": "POST"
+			},
+			{
+				"id": "7d02a43d-066a-4e3f-9f57-f05e1a148467",
+				"method": "POST"
+			},
+			{
+				"id": "5e75c83d-58de-4dd7-b8fa-5e054a8bc9f1",
+				"method": "PUT"
+			},
+			{
+				"id": "53b96d57-6006-41de-8a6e-96bc983dfd97",
+				"method": "DELETE"
+			},
+			{
+				"id": "8b546c7a-cf60-43d2-8546-521c2b62206a",
+				"method": "POST"
+			},
+			{
+				"id": "22b5a023-ae0f-4f00-ab6a-ff423a47fb8b",
+				"method": "GET"
+			},
+			{
+				"id": "f970d380-65bd-4280-9b0f-3aa24a251b6b",
+				"method": "POST"
+			},
+			{
+				"id": "3791d956-cb29-4516-8f3a-68692f6b1959",
+				"method": "POST"
+			},
+			{
+				"id": "e8299e7b-2a6a-4e36-b0d9-891b94312f02",
+				"method": "POST"
+			},
+			{
+				"id": "4d6382e0-4b70-49ff-ad9b-a32bcdd6bd2d",
+				"method": "GET"
+			},
+			{
+				"id": "3721229c-2973-4e27-b1b4-818e86492961",
+				"method": "GET"
+			},
+			{
+				"id": "814aed8c-f7d0-41b7-8a1e-a6dbfde6d5e2",
+				"method": "GET"
+			},
+			{
+				"id": "6c27a037-a69d-48b0-8b5e-d9e416f0160d",
+				"method": "GET"
+			},
+			{
+				"id": "f0a36f24-5283-452b-8fb4-2e6de6fa8316",
+				"method": "GET"
+			},
+			{
+				"id": "ae878da4-251b-4dac-ae61-c863cbcffac8",
+				"method": "GET"
+			},
+			{
+				"id": "9407f3db-1d34-47dc-8776-ca162e991715",
+				"method": "GET"
+			},
+			{
+				"id": "d96eb3a6-bc37-41e9-8df0-7216bc3d1f4a",
+				"method": "GET"
+			},
+			{
+				"id": "b54537b3-cfcc-4172-9b97-f9941bab14ba",
+				"method": "GET"
+			},
+			{
+				"id": "6b81c588-56bc-4a58-949e-398262269848",
+				"method": "GET"
+			},
+			{
+				"id": "fcce944e-e49b-4b59-a2b4-4af2828baef6",
+				"method": "GET"
+			},
+			{
+				"id": "7eb48530-dfdc-41af-8ea7-ca92dea72cc7",
+				"method": "GET"
+			},
+			{
+				"id": "b73d06c7-237a-40c5-9d1e-9378d2d41648",
+				"method": "POST"
+			},
+			{
+				"id": "71a380d9-3875-4bce-bb13-16687f9139f1",
+				"method": "POST"
+			},
+			{
+				"id": "6931dd4b-72b0-4b13-947a-328ccf74a5ee",
+				"method": "GET"
+			},
+			{
+				"id": "e5ec0608-f471-4a06-9dc9-53aefc622f18",
+				"method": "POST"
+			},
+			{
+				"id": "4b75fa11-24f9-461c-9d74-e13f571c63d6",
+				"method": "GET"
+			},
+			{
+				"id": "4e8ce723-1189-46bb-bb78-bd173618d9f2",
+				"method": "DELETE"
+			},
+			{
+				"id": "bc3d148b-b513-4c31-b640-6eb8ff2df3a5",
+				"method": "GET"
+			},
+			{
+				"id": "2814ff29-6262-4300-a88c-082adc43d815",
+				"method": "POST"
+			},
+			{
+				"id": "72642844-0323-4b19-9f1c-480e63b25018",
+				"method": "POST"
+			},
+			{
+				"id": "e664a094-e439-4ad6-b8c8-b0f7bf1808ef",
+				"method": "PUT"
+			},
+			{
+				"id": "0bf1b4db-0886-4df4-96de-76889c8bbaf8",
+				"method": "DELETE"
+			},
+			{
+				"id": "287e0ad6-a3f2-46fd-8636-06063f55f580",
+				"method": "GET"
+			},
+			{
+				"id": "5265d00d-c93a-4b12-b386-6db20aa4f681",
+				"method": "POST"
+			},
+			{
+				"id": "2c4c7a43-b661-4257-80a1-2fcae6054fe7",
+				"method": "PUT"
+			},
+			{
+				"id": "86425d40-5dbc-40cc-9eed-a7302b0db54d",
+				"method": "DELETE"
+			},
+			{
+				"id": "01e8b72b-d9bb-465c-91cb-531d356c7846",
+				"method": "GET"
+			},
+			{
+				"id": "b0ac9b71-c834-434d-8f11-b74997a9c5e6",
+				"method": "POST"
+			},
+			{
+				"id": "d5a7801d-bddb-4743-b7f9-0edcfb782b1e",
+				"method": "GET"
+			}
+		]
+	}
+}

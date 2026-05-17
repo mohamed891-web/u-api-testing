@@ -1,3163 +1,3134 @@
 {
-	"info": {
-		"_postman_id": "bd149b43-c56f-414a-9e1b-0ebf69ad3074",
-		"name": "UltivisionApi",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "45953829",
-		"_collection_link": "https://ibrahim-765140.postman.co/workspace/Ibrahim's-Workspace~3d9e913e-3b3a-4b4a-8ee8-9b4a3cb2c1bb/collection/45953829-bd149b43-c56f-414a-9e1b-0ebf69ad3074?action=share&source=collection_link&creator=45953829"
-	},
-	"item": [
-		{
-			"name": "api",
-			"item": [
-				{
-					"name": "auth",
-					"item": [
-						{
-							"name": "login",
-							"item": [
-								{
-									"name": "Login",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"pm.test(\"Response received\", function () {\r",
-													"    pm.expect(pm.response.code).to.be.oneOf([200,401]);\r",
-													"});\r",
-													"\r",
-													"if(pm.response.code === 200){\r",
-													"    var jsonData = pm.response.json();\r",
-													"\r",
-													"    if(jsonData.token){\r",
-													"        pm.environment.set(\"token\", jsonData.token);\r",
-													"    }\r",
-													"}"
-												],
-												"type": "text/javascript",
-												"packages": {},
-												"requests": {}
-											}
-										}
-									],
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{token}}",
-													"type": "string"
-												}
-											]
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"username\": \"admin\",\n  \"password\": \"Admin@123\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseurl}}/api/auth/login",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"auth",
-												"login"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"username\": \"string\",\n  \"password\": \"string\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{baseurl}}/api/auth/login",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"auth",
-														"login"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "register",
-							"item": [
-								{
-									"name": "Register",
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"password\": \"string\",\n  \"email\": \"string\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseurl}}/api/auth/register",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"auth",
-												"register"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"password\": \"string\",\n  \"email\": \"string\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{baseurl}}/api/auth/register",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"auth",
-														"register"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "forgot",
-							"item": [
-								{
-									"name": "Forgot Password",
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"email\": \"string\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseurl}}/api/auth/forgot",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"auth",
-												"forgot"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"email\": \"string\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{baseurl}}/api/auth/forgot",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"auth",
-														"forgot"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "reset",
-							"item": [
-								{
-									"name": "Reset Password",
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"email\": \"string\",\n  \"otp\": \"string\",\n  \"newPassword\": \"string\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseurl}}/api/auth/reset",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"auth",
-												"reset"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"email\": \"string\",\n  \"otp\": \"string\",\n  \"newPassword\": \"string\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{baseurl}}/api/auth/reset",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"auth",
-														"reset"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						}
-					],
-					"auth": {
-						"type": "bearer"
-					},
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {},
-								"exec": [
-									""
-								]
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {},
-								"exec": [
-									""
-								]
-							}
-						}
-					]
-				},
-				{
-					"name": "cart",
-					"item": [
-						{
-							"name": "{cartItemId}",
-							"item": [
-								{
-									"name": "/api/cart/:cartItemId",
-									"request": {
-										"method": "PUT",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"quantity\": 6611\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseurl}}/api/cart/:cartItemId",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"cart",
-												":cartItemId"
-											],
-											"variable": [
-												{
-													"key": "cartItemId",
-													"value": "1188"
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "PUT",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"quantity\": 6611\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{baseurl}}/api/cart/:cartItemId",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"cart",
-														":cartItemId"
-													],
-													"variable": [
-														{
-															"key": "cartItemId",
-															"value": "1188"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "/api/cart/:cartItemId",
-									"request": {
-										"method": "DELETE",
-										"header": [],
-										"url": {
-											"raw": "{{baseurl}}/api/cart/:cartItemId",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"cart",
-												":cartItemId"
-											],
-											"variable": [
-												{
-													"key": "cartItemId",
-													"value": "1188"
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "DELETE",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/cart/:cartItemId",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"cart",
-														":cartItemId"
-													],
-													"variable": [
-														{
-															"key": "cartItemId",
-															"value": "1188"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "/api/cart",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"productId\": 1395,\n  \"productName\": \"string\",\n  \"supplierId\": 182,\n  \"supplierName\": \"string\",\n  \"quantity\": 834,\n  \"unitPrice\": 5185.562620209225\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseurl}}/api/cart",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"api",
-										"cart"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"productId\": 1395,\n  \"productName\": \"string\",\n  \"supplierId\": 182,\n  \"supplierName\": \"string\",\n  \"quantity\": 834,\n  \"unitPrice\": 5185.562620209225\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseurl}}/api/cart",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"cart"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						},
-						{
-							"name": "/api/cart",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseurl}}/api/cart",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"api",
-										"cart"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseurl}}/api/cart",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"cart"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "orders",
-					"item": [
-						{
-							"name": "{orderId}",
-							"item": [
-								{
-									"name": "cancel",
-									"item": [
-										{
-											"name": "/api/orders/:orderId/cancel",
-											"request": {
-												"method": "POST",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/orders/:orderId/cancel",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"orders",
-														":orderId",
-														"cancel"
-													],
-													"variable": [
-														{
-															"key": "orderId",
-															"value": "1188"
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"name": "OK",
-													"originalRequest": {
-														"method": "POST",
-														"header": [],
-														"url": {
-															"raw": "{{baseurl}}/api/orders/:orderId/cancel",
-															"host": [
-																"{{baseurl}}"
-															],
-															"path": [
-																"api",
-																"orders",
-																":orderId",
-																"cancel"
-															],
-															"variable": [
-																{
-																	"key": "orderId",
-																	"value": "1188"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"body": ""
-												}
-											]
-										}
-									]
-								},
-								{
-									"name": "request-return",
-									"item": [
-										{
-											"name": "/api/orders/:orderId/request-return",
-											"request": {
-												"method": "POST",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/orders/:orderId/request-return",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"orders",
-														":orderId",
-														"request-return"
-													],
-													"variable": [
-														{
-															"key": "orderId",
-															"value": "1188"
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"name": "OK",
-													"originalRequest": {
-														"method": "POST",
-														"header": [],
-														"url": {
-															"raw": "{{baseurl}}/api/orders/:orderId/request-return",
-															"host": [
-																"{{baseurl}}"
-															],
-															"path": [
-																"api",
-																"orders",
-																":orderId",
-																"request-return"
-															],
-															"variable": [
-																{
-																	"key": "orderId",
-																	"value": "1188"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"body": ""
-												}
-											]
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "/api/orders",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"addressId\": 6970,\n  \"paymentMethodId\": 2608,\n  \"notes\": \"string\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseurl}}/api/orders",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"api",
-										"orders"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"addressId\": 6970,\n  \"paymentMethodId\": 2608,\n  \"notes\": \"string\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseurl}}/api/orders",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"orders"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						},
-						{
-							"name": "/api/orders",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseurl}}/api/orders",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"api",
-										"orders"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseurl}}/api/orders",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"orders"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "products",
-					"item": [
-						{
-							"name": "categories",
-							"item": [
-								{
-									"name": "/api/products/categories",
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseurl}}/api/products/categories",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"products",
-												"categories"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/products/categories",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"products",
-														"categories"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "{productId}",
-							"item": [
-								{
-									"name": "supplierinventory",
-									"item": [
-										{
-											"name": "/api/products/:productId/supplierinventory",
-											"request": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/products/:productId/supplierinventory",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"products",
-														":productId",
-														"supplierinventory"
-													],
-													"variable": [
-														{
-															"key": "productId",
-															"value": "1188"
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"name": "OK",
-													"originalRequest": {
-														"method": "GET",
-														"header": [],
-														"url": {
-															"raw": "{{baseurl}}/api/products/:productId/supplierinventory",
-															"host": [
-																"{{baseurl}}"
-															],
-															"path": [
-																"api",
-																"products",
-																":productId",
-																"supplierinventory"
-															],
-															"variable": [
-																{
-																	"key": "productId",
-																	"value": "1188"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"body": ""
-												}
-											]
-										}
-									]
-								},
-								{
-									"name": "/api/products/:productId",
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseurl}}/api/products/:productId",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"products",
-												":productId"
-											],
-											"variable": [
-												{
-													"key": "productId",
-													"value": "1188"
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/products/:productId",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"products",
-														":productId"
-													],
-													"variable": [
-														{
-															"key": "productId",
-															"value": "1188"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "/api/products",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseurl}}/api/products?categoryId=1188&search=string&sort=string&page=1&pageSize=50",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"api",
-										"products"
-									],
-									"query": [
-										{
-											"key": "categoryId",
-											"value": "1188"
-										},
-										{
-											"key": "search",
-											"value": "string"
-										},
-										{
-											"key": "sort",
-											"value": "string"
-										},
-										{
-											"key": "page",
-											"value": "1"
-										},
-										{
-											"key": "pageSize",
-											"value": "50"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseurl}}/api/products?categoryId=1188&search=string&sort=string&page=1&pageSize=50",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"products"
-											],
-											"query": [
-												{
-													"key": "categoryId",
-													"value": "1188"
-												},
-												{
-													"key": "search",
-													"value": "string"
-												},
-												{
-													"key": "sort",
-													"value": "string"
-												},
-												{
-													"key": "page",
-													"value": "1"
-												},
-												{
-													"key": "pageSize",
-													"value": "50"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "addresses",
-					"item": [
-						{
-							"name": "/api/addresses",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json"
-									}
-								],
-								"url": {
-									"raw": "{{baseurl}}/api/addresses",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"api",
-										"addresses"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json"
-											}
-										],
-										"url": {
-											"raw": "{{baseurl}}/api/addresses",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"addresses"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "[\n  {\n    \"addressId\": 4765,\n    \"userId\": \"string\",\n    \"title\": \"string\",\n    \"fullAddress\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"postalCode\": \"string\",\n    \"country\": \"string\",\n    \"phone\": \"string\",\n    \"isDefault\": true,\n    \"createdAt\": \"1956-12-11T02:06:45.249Z\",\n    \"updatedAt\": \"1986-07-02T03:02:47.553Z\",\n    \"shortAddress\": \"string\",\n    \"displayText\": \"string\"\n  },\n  {\n    \"addressId\": 3043,\n    \"userId\": \"string\",\n    \"title\": \"string\",\n    \"fullAddress\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"postalCode\": \"string\",\n    \"country\": \"string\",\n    \"phone\": \"string\",\n    \"isDefault\": true,\n    \"createdAt\": \"2024-03-12T03:22:14.665Z\",\n    \"updatedAt\": \"1969-03-15T12:10:39.871Z\",\n    \"shortAddress\": \"string\",\n    \"displayText\": \"string\"\n  }\n]"
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "bookings",
-					"item": [
-						{
-							"name": "apartments",
-							"item": [
-								{
-									"name": "{apartmentId}",
-									"item": [
-										{
-											"name": "rooms",
-											"item": [
-												{
-													"name": "availability",
-													"item": [
-														{
-															"name": "Get Rooms With Availability",
-															"request": {
-																"method": "GET",
-																"header": [],
-																"url": {
-																	"raw": "{{baseurl}}/api/bookings/apartments/:apartmentId/rooms/availability?start=1987-12-20T13:56:03.781Z&end=1987-12-20T13:56:03.781Z",
-																	"host": [
-																		"{{baseurl}}"
-																	],
-																	"path": [
-																		"api",
-																		"bookings",
-																		"apartments",
-																		":apartmentId",
-																		"rooms",
-																		"availability"
-																	],
-																	"query": [
-																		{
-																			"key": "start",
-																			"value": "1987-12-20T13:56:03.781Z"
-																		},
-																		{
-																			"key": "end",
-																			"value": "1987-12-20T13:56:03.781Z"
-																		}
-																	],
-																	"variable": [
-																		{
-																			"key": "apartmentId",
-																			"value": "string"
-																		}
-																	]
-																}
-															},
-															"response": [
-																{
-																	"name": "OK",
-																	"originalRequest": {
-																		"method": "GET",
-																		"header": [],
-																		"url": {
-																			"raw": "{{baseurl}}/api/bookings/apartments/:apartmentId/rooms/availability?start=1987-12-20T13:56:03.781Z&end=1987-12-20T13:56:03.781Z",
-																			"host": [
-																				"{{baseurl}}"
-																			],
-																			"path": [
-																				"api",
-																				"bookings",
-																				"apartments",
-																				":apartmentId",
-																				"rooms",
-																				"availability"
-																			],
-																			"query": [
-																				{
-																					"key": "start",
-																					"value": "1987-12-20T13:56:03.781Z"
-																				},
-																				{
-																					"key": "end",
-																					"value": "1987-12-20T13:56:03.781Z"
-																				}
-																			],
-																			"variable": [
-																				{
-																					"key": "apartmentId",
-																					"value": "string"
-																				}
-																			]
-																		}
-																	},
-																	"status": "OK",
-																	"code": 200,
-																	"_postman_previewlanguage": "text",
-																	"header": [],
-																	"cookie": [],
-																	"body": ""
-																}
-															]
-														}
-													]
-												},
-												{
-													"name": "Get Rooms For Apartment",
-													"request": {
-														"method": "GET",
-														"header": [],
-														"url": {
-															"raw": "{{baseurl}}/api/bookings/apartments/:apartmentId/rooms",
-															"host": [
-																"{{baseurl}}"
-															],
-															"path": [
-																"api",
-																"bookings",
-																"apartments",
-																":apartmentId",
-																"rooms"
-															],
-															"variable": [
-																{
-																	"key": "apartmentId",
-																	"value": "string"
-																}
-															]
-														}
-													},
-													"response": [
-														{
-															"name": "OK",
-															"originalRequest": {
-																"method": "GET",
-																"header": [],
-																"url": {
-																	"raw": "{{baseurl}}/api/bookings/apartments/:apartmentId/rooms",
-																	"host": [
-																		"{{baseurl}}"
-																	],
-																	"path": [
-																		"api",
-																		"bookings",
-																		"apartments",
-																		":apartmentId",
-																		"rooms"
-																	],
-																	"variable": [
-																		{
-																			"key": "apartmentId",
-																			"value": "string"
-																		}
-																	]
-																}
-															},
-															"status": "OK",
-															"code": 200,
-															"_postman_previewlanguage": "text",
-															"header": [],
-															"cookie": [],
-															"body": ""
-														}
-													]
-												}
-											]
-										},
-										{
-											"name": "Get Apartment Details",
-											"request": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/bookings/apartments/:apartmentId",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"bookings",
-														"apartments",
-														":apartmentId"
-													],
-													"variable": [
-														{
-															"key": "apartmentId",
-															"value": "string"
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"name": "OK",
-													"originalRequest": {
-														"method": "GET",
-														"header": [],
-														"url": {
-															"raw": "{{baseurl}}/api/bookings/apartments/:apartmentId",
-															"host": [
-																"{{baseurl}}"
-															],
-															"path": [
-																"api",
-																"bookings",
-																"apartments",
-																":apartmentId"
-															],
-															"variable": [
-																{
-																	"key": "apartmentId",
-																	"value": "string"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"body": ""
-												}
-											]
-										}
-									]
-								},
-								{
-									"name": "Get Apartments",
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseurl}}/api/bookings/apartments",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"bookings",
-												"apartments"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/bookings/apartments",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"bookings",
-														"apartments"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "rooms",
-							"item": [
-								{
-									"name": "{roomId}",
-									"item": [
-										{
-											"name": "available",
-											"item": [
-												{
-													"name": "Check Room Availability",
-													"request": {
-														"method": "GET",
-														"header": [],
-														"url": {
-															"raw": "{{baseurl}}/api/bookings/rooms/:roomId/available?start=1987-12-20T13:56:03.781Z&end=1987-12-20T13:56:03.781Z",
-															"host": [
-																"{{baseurl}}"
-															],
-															"path": [
-																"api",
-																"bookings",
-																"rooms",
-																":roomId",
-																"available"
-															],
-															"query": [
-																{
-																	"key": "start",
-																	"value": "1987-12-20T13:56:03.781Z"
-																},
-																{
-																	"key": "end",
-																	"value": "1987-12-20T13:56:03.781Z"
-																}
-															],
-															"variable": [
-																{
-																	"key": "roomId",
-																	"value": "string"
-																}
-															]
-														}
-													},
-													"response": [
-														{
-															"name": "OK",
-															"originalRequest": {
-																"method": "GET",
-																"header": [],
-																"url": {
-																	"raw": "{{baseurl}}/api/bookings/rooms/:roomId/available?start=1987-12-20T13:56:03.781Z&end=1987-12-20T13:56:03.781Z",
-																	"host": [
-																		"{{baseurl}}"
-																	],
-																	"path": [
-																		"api",
-																		"bookings",
-																		"rooms",
-																		":roomId",
-																		"available"
-																	],
-																	"query": [
-																		{
-																			"key": "start",
-																			"value": "1987-12-20T13:56:03.781Z"
-																		},
-																		{
-																			"key": "end",
-																			"value": "1987-12-20T13:56:03.781Z"
-																		}
-																	],
-																	"variable": [
-																		{
-																			"key": "roomId",
-																			"value": "string"
-																		}
-																	]
-																}
-															},
-															"status": "OK",
-															"code": 200,
-															"_postman_previewlanguage": "text",
-															"header": [],
-															"cookie": [],
-															"body": ""
-														}
-													]
-												}
-											]
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "user",
-							"item": [
-								{
-									"name": "{userId}",
-									"item": [
-										{
-											"name": "Get Bookings By User",
-											"request": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/bookings/user/:userId",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"bookings",
-														"user",
-														":userId"
-													],
-													"variable": [
-														{
-															"key": "userId",
-															"value": "1188"
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"name": "OK",
-													"originalRequest": {
-														"method": "GET",
-														"header": [],
-														"url": {
-															"raw": "{{baseurl}}/api/bookings/user/:userId",
-															"host": [
-																"{{baseurl}}"
-															],
-															"path": [
-																"api",
-																"bookings",
-																"user",
-																":userId"
-															],
-															"variable": [
-																{
-																	"key": "userId",
-																	"value": "1188"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"body": ""
-												}
-											]
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "multi",
-							"item": [
-								{
-									"name": "/api/bookings/multi",
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"userTestDataId\": 5622,\n  \"apartmentId\": \"string\",\n  \"startDate\": \"2006-02-19T12:46:54.576Z\",\n  \"endDate\": \"1948-07-21T20:40:39.983Z\",\n  \"adults\": 5701,\n  \"children\": 7960,\n  \"rooms\": [\n    {\n      \"roomId\": \"string\",\n      \"name\": \"string\",\n      \"quantity\": 5466,\n      \"pricePerNight\": 1037.0996031742009\n    },\n    {\n      \"roomId\": \"string\",\n      \"name\": \"string\",\n      \"quantity\": 5589,\n      \"pricePerNight\": 1860.3811392973646\n    }\n  ],\n  \"totalPrice\": 3142.504065204108,\n  \"customerName\": \"string\",\n  \"customerEmail\": \"string\",\n  \"customerPhone\": \"string\",\n  \"apartmentTitle\": \"string\",\n  \"apartmentImage\": \"string\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseurl}}/api/bookings/multi",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"bookings",
-												"multi"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"userTestDataId\": 5622,\n  \"apartmentId\": \"string\",\n  \"startDate\": \"2006-02-19T12:46:54.576Z\",\n  \"endDate\": \"1948-07-21T20:40:39.983Z\",\n  \"adults\": 5701,\n  \"children\": 7960,\n  \"rooms\": [\n    {\n      \"roomId\": \"string\",\n      \"name\": \"string\",\n      \"quantity\": 5466,\n      \"pricePerNight\": 1037.0996031742009\n    },\n    {\n      \"roomId\": \"string\",\n      \"name\": \"string\",\n      \"quantity\": 5589,\n      \"pricePerNight\": 1860.3811392973646\n    }\n  ],\n  \"totalPrice\": 3142.504065204108,\n  \"customerName\": \"string\",\n  \"customerEmail\": \"string\",\n  \"customerPhone\": \"string\",\n  \"apartmentTitle\": \"string\",\n  \"apartmentImage\": \"string\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{baseurl}}/api/bookings/multi",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"bookings",
-														"multi"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "{bookingId}",
-							"item": [
-								{
-									"name": "cancel",
-									"item": [
-										{
-											"name": "Cancel Booking Group Per Night",
-											"request": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{baseurl}}/api/bookings/:bookingId/cancel",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"bookings",
-														":bookingId",
-														"cancel"
-													],
-													"variable": [
-														{
-															"key": "bookingId",
-															"value": "81af7326-9a97-e223-bc6c-b615890c543f"
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"name": "OK",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": {
-															"raw": "{{baseurl}}/api/bookings/:bookingId/cancel",
-															"host": [
-																"{{baseurl}}"
-															],
-															"path": [
-																"api",
-																"bookings",
-																":bookingId",
-																"cancel"
-															],
-															"variable": [
-																{
-																	"key": "bookingId",
-																	"value": "81af7326-9a97-e223-bc6c-b615890c543f"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"body": ""
-												}
-											]
-										}
-									]
-								},
-								{
-									"name": "Get Booking By Id",
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseurl}}/api/bookings/:bookingId",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"bookings",
-												":bookingId"
-											],
-											"variable": [
-												{
-													"key": "bookingId",
-													"value": "81af7326-9a97-e223-bc6c-b615890c543f"
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/bookings/:bookingId",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"bookings",
-														":bookingId"
-													],
-													"variable": [
-														{
-															"key": "bookingId",
-															"value": "81af7326-9a97-e223-bc6c-b615890c543f"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "Create Booking",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"apartmentId\": \"string\",\n  \"roomId\": \"string\",\n  \"startDate\": \"2020-10-05T12:14:04.319Z\",\n  \"endDate\": \"1987-12-01T00:19:55.212Z\",\n  \"guests\": 6774,\n  \"quantity\": 2371,\n  \"totalPrice\": 5370.707032200597,\n  \"apartmentTitle\": \"string\",\n  \"apartmentImage\": \"string\",\n  \"roomName\": \"string\",\n  \"customerName\": \"string\",\n  \"customerEmail\": \"string\",\n  \"customerPhone\": \"string\",\n  \"userTestDataId\": 1935\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseurl}}/api/bookings",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"api",
-										"bookings"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"apartmentId\": \"string\",\n  \"roomId\": \"string\",\n  \"startDate\": \"2020-10-05T12:14:04.319Z\",\n  \"endDate\": \"1987-12-01T00:19:55.212Z\",\n  \"guests\": 6774,\n  \"quantity\": 2371,\n  \"totalPrice\": 5370.707032200597,\n  \"apartmentTitle\": \"string\",\n  \"apartmentImage\": \"string\",\n  \"roomName\": \"string\",\n  \"customerName\": \"string\",\n  \"customerEmail\": \"string\",\n  \"customerPhone\": \"string\",\n  \"userTestDataId\": 1935\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseurl}}/api/bookings",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"bookings"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "bookinggroups",
-					"item": [
-						{
-							"name": "user",
-							"item": [
-								{
-									"name": "{userId}",
-									"item": [
-										{
-											"name": "Get Booking Groups By User",
-											"request": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/bookinggroups/user/:userId",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"bookinggroups",
-														"user",
-														":userId"
-													],
-													"variable": [
-														{
-															"key": "userId",
-															"value": "1188"
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"name": "OK",
-													"originalRequest": {
-														"method": "GET",
-														"header": [],
-														"url": {
-															"raw": "{{baseurl}}/api/bookinggroups/user/:userId",
-															"host": [
-																"{{baseurl}}"
-															],
-															"path": [
-																"api",
-																"bookinggroups",
-																"user",
-																":userId"
-															],
-															"variable": [
-																{
-																	"key": "userId",
-																	"value": "1188"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"body": ""
-												}
-											]
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "saved",
-					"item": [
-						{
-							"name": "{userId}",
-							"item": [
-								{
-									"name": "{apartmentId}",
-									"item": [
-										{
-											"name": "Remove Saved",
-											"request": {
-												"method": "DELETE",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/saved/:userId/:apartmentId",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"saved",
-														":userId",
-														":apartmentId"
-													],
-													"variable": [
-														{
-															"key": "userId",
-															"value": "1188"
-														},
-														{
-															"key": "apartmentId",
-															"value": "string"
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"name": "OK",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [],
-														"url": {
-															"raw": "{{baseurl}}/api/saved/:userId/:apartmentId",
-															"host": [
-																"{{baseurl}}"
-															],
-															"path": [
-																"api",
-																"saved",
-																":userId",
-																":apartmentId"
-															],
-															"variable": [
-																{
-																	"key": "userId",
-																	"value": "1188"
-																},
-																{
-																	"key": "apartmentId",
-																	"value": "string"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"body": ""
-												}
-											]
-										}
-									]
-								},
-								{
-									"name": "Get Saved With Image And Meta",
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseurl}}/api/saved/:userId",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"saved",
-												":userId"
-											],
-											"variable": [
-												{
-													"key": "userId",
-													"value": "1188"
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/saved/:userId",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"saved",
-														":userId"
-													],
-													"variable": [
-														{
-															"key": "userId",
-															"value": "1188"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "toggle",
-							"item": [
-								{
-									"name": "Toggle Saved",
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"userTestDataId\": 5627,\n  \"apartmentId\": \"string\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseurl}}/api/saved/toggle",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"saved",
-												"toggle"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"userTestDataId\": 5627,\n  \"apartmentId\": \"string\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{baseurl}}/api/saved/toggle",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"saved",
-														"toggle"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "Add Saved",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"userTestDataId\": 2048,\n  \"apartmentId\": \"string\",\n  \"apartmentTitle\": \"string\",\n  \"apartmentImage\": \"string\"\n}",
-									"options": {
-										"raw": {
-											"headerFamily": "json",
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseurl}}/api/saved",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"api",
-										"saved"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"userTestDataId\": 2048,\n  \"apartmentId\": \"string\",\n  \"apartmentTitle\": \"string\",\n  \"apartmentImage\": \"string\"\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseurl}}/api/saved",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"saved"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "users",
-					"item": [
-						{
-							"name": "addresses",
-							"item": [
-								{
-									"name": "{id}",
-									"item": [
-										{
-											"name": "/api/users/addresses/:id",
-											"request": {
-												"method": "PUT",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"title\": \"string\",\n  \"fullAddress\": \"string\",\n  \"city\": \"string\",\n  \"state\": \"string\",\n  \"postalCode\": \"string\",\n  \"country\": \"string\",\n  \"phone\": \"string\",\n  \"isDefault\": true\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{baseurl}}/api/users/addresses/:id",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"users",
-														"addresses",
-														":id"
-													],
-													"variable": [
-														{
-															"key": "id",
-															"value": "1188"
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"name": "OK",
-													"originalRequest": {
-														"method": "PUT",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"title\": \"string\",\n  \"fullAddress\": \"string\",\n  \"city\": \"string\",\n  \"state\": \"string\",\n  \"postalCode\": \"string\",\n  \"country\": \"string\",\n  \"phone\": \"string\",\n  \"isDefault\": true\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": {
-															"raw": "{{baseurl}}/api/users/addresses/:id",
-															"host": [
-																"{{baseurl}}"
-															],
-															"path": [
-																"api",
-																"users",
-																"addresses",
-																":id"
-															],
-															"variable": [
-																{
-																	"key": "id",
-																	"value": "1188"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"body": ""
-												}
-											]
-										},
-										{
-											"name": "/api/users/addresses/:id",
-											"request": {
-												"method": "DELETE",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/users/addresses/:id",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"users",
-														"addresses",
-														":id"
-													],
-													"variable": [
-														{
-															"key": "id",
-															"value": "1188"
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"name": "OK",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [],
-														"url": {
-															"raw": "{{baseurl}}/api/users/addresses/:id",
-															"host": [
-																"{{baseurl}}"
-															],
-															"path": [
-																"api",
-																"users",
-																"addresses",
-																":id"
-															],
-															"variable": [
-																{
-																	"key": "id",
-																	"value": "1188"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"body": ""
-												}
-											]
-										}
-									]
-								},
-								{
-									"name": "/api/users/addresses",
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseurl}}/api/users/addresses",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"users",
-												"addresses"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/users/addresses",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"users",
-														"addresses"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "/api/users/addresses",
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"title\": \"string\",\n  \"fullAddress\": \"string\",\n  \"city\": \"string\",\n  \"state\": \"string\",\n  \"postalCode\": \"string\",\n  \"country\": \"string\",\n  \"phone\": \"string\",\n  \"isDefault\": true\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseurl}}/api/users/addresses",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"users",
-												"addresses"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"title\": \"string\",\n  \"fullAddress\": \"string\",\n  \"city\": \"string\",\n  \"state\": \"string\",\n  \"postalCode\": \"string\",\n  \"country\": \"string\",\n  \"phone\": \"string\",\n  \"isDefault\": true\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{baseurl}}/api/users/addresses",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"users",
-														"addresses"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						},
-						{
-							"name": "paymentmethods",
-							"item": [
-								{
-									"name": "{id}",
-									"item": [
-										{
-											"name": "/api/users/paymentmethods/:id",
-											"request": {
-												"method": "PUT",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"label\": \"string\",\n  \"provider\": \"string\",\n  \"token\": \"string\",\n  \"isDefault\": false\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{baseurl}}/api/users/paymentmethods/:id",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"users",
-														"paymentmethods",
-														":id"
-													],
-													"variable": [
-														{
-															"key": "id",
-															"value": "1188"
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"name": "OK",
-													"originalRequest": {
-														"method": "PUT",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"label\": \"string\",\n  \"provider\": \"string\",\n  \"token\": \"string\",\n  \"isDefault\": false\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": {
-															"raw": "{{baseurl}}/api/users/paymentmethods/:id",
-															"host": [
-																"{{baseurl}}"
-															],
-															"path": [
-																"api",
-																"users",
-																"paymentmethods",
-																":id"
-															],
-															"variable": [
-																{
-																	"key": "id",
-																	"value": "1188"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"body": ""
-												}
-											]
-										},
-										{
-											"name": "/api/users/paymentmethods/:id",
-											"request": {
-												"method": "DELETE",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/users/paymentmethods/:id",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"users",
-														"paymentmethods",
-														":id"
-													],
-													"variable": [
-														{
-															"key": "id",
-															"value": "1188"
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"name": "OK",
-													"originalRequest": {
-														"method": "DELETE",
-														"header": [],
-														"url": {
-															"raw": "{{baseurl}}/api/users/paymentmethods/:id",
-															"host": [
-																"{{baseurl}}"
-															],
-															"path": [
-																"api",
-																"users",
-																"paymentmethods",
-																":id"
-															],
-															"variable": [
-																{
-																	"key": "id",
-																	"value": "1188"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "text",
-													"header": [],
-													"cookie": [],
-													"body": ""
-												}
-											]
-										}
-									]
-								},
-								{
-									"name": "/api/users/paymentmethods",
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseurl}}/api/users/paymentmethods",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"users",
-												"paymentmethods"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/api/users/paymentmethods",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"users",
-														"paymentmethods"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								},
-								{
-									"name": "/api/users/paymentmethods",
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"label\": \"string\",\n  \"provider\": \"string\",\n  \"token\": \"string\",\n  \"isDefault\": false\n}",
-											"options": {
-												"raw": {
-													"headerFamily": "json",
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseurl}}/api/users/paymentmethods",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"api",
-												"users",
-												"paymentmethods"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"label\": \"string\",\n  \"provider\": \"string\",\n  \"token\": \"string\",\n  \"isDefault\": false\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": {
-													"raw": "{{baseurl}}/api/users/paymentmethods",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"api",
-														"users",
-														"paymentmethods"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				{
-					"name": "New Request",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				}
-			],
-			"auth": {
-				"type": "bearer",
-				"bearer": [
-					{
-						"key": "token",
-						"value": "{{token}}",
-						"type": "string"
-					}
-				]
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"packages": {},
-						"requests": {},
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"packages": {},
-						"requests": {},
-						"exec": [
-							"// Status Code Validation\r",
-							"pm.test(\"Status code is successful\", function () {\r",
-							"    pm.expect(pm.response.code).to.be.oneOf([200,201,202,204]);\r",
-							"});\r",
-							"\r",
-							"// Response Time Validation\r",
-							"pm.test(\"Response time less than 5 seconds\", function () {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
-							"});\r",
-							"\r",
-							"// Content-Type Validation\r",
-							"pm.test(\"Response is JSON\", function () {\r",
-							"    pm.response.to.have.header(\"Content-Type\");\r",
-							"});\r",
-							"\r",
-							"// Response Not Empty\r",
-							"pm.test(\"Response body not empty\", function () {\r",
-							"    pm.expect(pm.response.text()).to.not.be.empty;\r",
-							"});\r",
-							"\r",
-							"// Auto Save JWT Token\r",
-							"try {\r",
-							"    var jsonData = pm.response.json();\r",
-							"\r",
-							"    if(jsonData.token){\r",
-							"        pm.environment.set(\"token\", jsonData.token);\r",
-							"    }\r",
-							"\r",
-							"    if(jsonData.id){\r",
-							"        pm.environment.set(\"lastId\", jsonData.id);\r",
-							"    }\r",
-							"\r",
-							"} catch (e) {\r",
-							"    console.log(\"No JSON response\");\r",
-							"}"
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "images",
-			"item": [
-				{
-					"name": "{fileName}",
-					"item": [
-						{
-							"name": "Debug Image Serve",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseurl}}/images/:fileName",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"images",
-										":fileName"
-									],
-									"variable": [
-										{
-											"key": "fileName",
-											"value": "string"
-										}
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseurl}}/images/:fileName",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"images",
-												":fileName"
-											],
-											"variable": [
-												{
-													"key": "fileName",
-													"value": "string"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "text",
-									"header": [],
-									"cookie": [],
-									"body": ""
-								}
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "dbg",
-			"item": [
-				{
-					"name": "products",
-					"item": [
-						{
-							"name": "test",
-							"item": [
-								{
-									"name": "/dbg/products/test",
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{baseurl}}/dbg/products/test",
-											"host": [
-												"{{baseurl}}"
-											],
-											"path": [
-												"dbg",
-												"products",
-												"test"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "OK",
-											"originalRequest": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{baseurl}}/dbg/products/test",
-													"host": [
-														"{{baseurl}}"
-													],
-													"path": [
-														"dbg",
-														"products",
-														"test"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "text",
-											"header": [],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							]
-						}
-					]
-				}
-			]
-		}
-	],
-	"auth": {
-		"type": "bearer",
-		"bearer": [
-			{
-				"key": "token",
-				"value": "{{token}}",
-				"type": "string"
-			}
-		]
-	},
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"requests": {},
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"requests": {},
-				"exec": [
-					"// Status Code Validation\r",
-					"pm.test(\"Status code is successful\", function () {\r",
-					"    pm.expect(pm.response.code).to.be.oneOf([200,201,202,204]);\r",
-					"});\r",
-					"\r",
-					"// Response Time Validation\r",
-					"pm.test(\"Response time less than 5 seconds\", function () {\r",
-					"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
-					"});\r",
-					"\r",
-					"// Content-Type Validation\r",
-					"pm.test(\"Response is JSON\", function () {\r",
-					"    pm.response.to.have.header(\"Content-Type\");\r",
-					"});\r",
-					"\r",
-					"// Response Not Empty\r",
-					"pm.test(\"Response body not empty\", function () {\r",
-					"    pm.expect(pm.response.text()).to.not.be.empty;\r",
-					"});\r",
-					"\r",
-					"// Auto Save JWT Token\r",
-					"try {\r",
-					"    var jsonData = pm.response.json();\r",
-					"\r",
-					"    if(jsonData.token){\r",
-					"        pm.environment.set(\"token\", jsonData.token);\r",
-					"    }\r",
-					"\r",
-					"    if(jsonData.id){\r",
-					"        pm.environment.set(\"lastId\", jsonData.id);\r",
-					"    }\r",
-					"\r",
-					"} catch (e) {\r",
-					"    console.log(\"No JSON response\");\r",
-					"}"
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "baseUrl",
-			"value": "/"
-		}
-	]
+  "info": {
+    "_postman_id": "bd149b43-c56f-414a-9e1b-0ebf69ad3074",
+    "name": "UltivisionApi",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "45953829",
+    "_collection_link": "https://go.postman.co/collection/45953829-bd149b43-c56f-414a-9e1b-0ebf69ad3074?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "auth",
+          "item": [
+            {
+              "name": "login",
+              "item": [
+                {
+                  "name": "Login",
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "exec": [
+                          "pm.test(\"Response received\", function () {\r",
+                          "    pm.expect(pm.response.code).to.be.oneOf([200,401]);\r",
+                          "});\r",
+                          "\r",
+                          "if(pm.response.code === 200){\r",
+                          "    var jsonData = pm.response.json();\r",
+                          "\r",
+                          "    if(jsonData.token){\r",
+                          "        pm.environment.set(\"token\", jsonData.token);\r",
+                          "    }\r",
+                          "}"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {},
+                        "requests": {}
+                      }
+                    }
+                  ],
+                  "request": {
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": [
+                        {
+                          "key": "token",
+                          "value": "{{token}}",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"Admin@123\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseurl}}/api/auth/login",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "auth",
+                        "login"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"username\": \"string\",\n  \"password\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseurl}}/api/auth/login",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "auth",
+                            "login"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "register",
+              "item": [
+                {
+                  "name": "Register",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"password\": \"string\",\n  \"email\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseurl}}/api/auth/register",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "auth",
+                        "register"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"username\": \"string\",\n  \"name\": \"string\",\n  \"password\": \"string\",\n  \"email\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseurl}}/api/auth/register",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "auth",
+                            "register"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "forgot",
+              "item": [
+                {
+                  "name": "Forgot Password",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseurl}}/api/auth/forgot",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "auth",
+                        "forgot"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"email\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseurl}}/api/auth/forgot",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "auth",
+                            "forgot"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "reset",
+              "item": [
+                {
+                  "name": "Reset Password",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"string\",\n  \"otp\": \"string\",\n  \"newPassword\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseurl}}/api/auth/reset",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "auth",
+                        "reset"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"email\": \"string\",\n  \"otp\": \"string\",\n  \"newPassword\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseurl}}/api/auth/reset",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "auth",
+                            "reset"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "auth": {
+            "type": "bearer"
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {},
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {},
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "cart",
+          "item": [
+            {
+              "name": "{cartItemId}",
+              "item": [
+                {
+                  "name": "/api/cart/:cartItemId",
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"quantity\": 6611\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseurl}}/api/cart/:cartItemId",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "cart",
+                        ":cartItemId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "cartItemId",
+                          "value": "1188"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"quantity\": 6611\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseurl}}/api/cart/:cartItemId",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "cart",
+                            ":cartItemId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cartItemId",
+                              "value": "1188"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                },
+                {
+                  "name": "/api/cart/:cartItemId",
+                  "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseurl}}/api/cart/:cartItemId",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "cart",
+                        ":cartItemId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "cartItemId",
+                          "value": "1188"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/cart/:cartItemId",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "cart",
+                            ":cartItemId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "cartItemId",
+                              "value": "1188"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "/api/cart",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"productId\": 1395,\n  \"productName\": \"string\",\n  \"supplierId\": 182,\n  \"supplierName\": \"string\",\n  \"quantity\": 834,\n  \"unitPrice\": 5185.562620209225\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseurl}}/api/cart",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "cart"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"productId\": 1395,\n  \"productName\": \"string\",\n  \"supplierId\": 182,\n  \"supplierName\": \"string\",\n  \"quantity\": 834,\n  \"unitPrice\": 5185.562620209225\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseurl}}/api/cart",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "cart"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            },
+            {
+              "name": "/api/cart",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/api/cart",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "cart"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseurl}}/api/cart",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "cart"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "orders",
+          "item": [
+            {
+              "name": "{orderId}",
+              "item": [
+                {
+                  "name": "cancel",
+                  "item": [
+                    {
+                      "name": "/api/orders/:orderId/cancel",
+                      "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/orders/:orderId/cancel",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "orders",
+                            ":orderId",
+                            "cancel"
+                          ],
+                          "variable": [
+                            {
+                              "key": "orderId",
+                              "value": "1188"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseurl}}/api/orders/:orderId/cancel",
+                              "host": [
+                                "{{baseurl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "orders",
+                                ":orderId",
+                                "cancel"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "orderId",
+                                  "value": "1188"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "request-return",
+                  "item": [
+                    {
+                      "name": "/api/orders/:orderId/request-return",
+                      "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/orders/:orderId/request-return",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "orders",
+                            ":orderId",
+                            "request-return"
+                          ],
+                          "variable": [
+                            {
+                              "key": "orderId",
+                              "value": "1188"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseurl}}/api/orders/:orderId/request-return",
+                              "host": [
+                                "{{baseurl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "orders",
+                                ":orderId",
+                                "request-return"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "orderId",
+                                  "value": "1188"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "/api/orders",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"addressId\": 6970,\n  \"paymentMethodId\": 2608,\n  \"notes\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseurl}}/api/orders",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "orders"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"addressId\": 6970,\n  \"paymentMethodId\": 2608,\n  \"notes\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseurl}}/api/orders",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "orders"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            },
+            {
+              "name": "/api/orders",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/api/orders",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "orders"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseurl}}/api/orders",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "orders"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "products",
+          "item": [
+            {
+              "name": "categories",
+              "item": [
+                {
+                  "name": "/api/products/categories",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseurl}}/api/products/categories",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "products",
+                        "categories"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/products/categories",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "products",
+                            "categories"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "{productId}",
+              "item": [
+                {
+                  "name": "supplierinventory",
+                  "item": [
+                    {
+                      "name": "/api/products/:productId/supplierinventory",
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/products/:productId/supplierinventory",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "products",
+                            ":productId",
+                            "supplierinventory"
+                          ],
+                          "variable": [
+                            {
+                              "key": "productId",
+                              "value": "1188"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseurl}}/api/products/:productId/supplierinventory",
+                              "host": [
+                                "{{baseurl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "products",
+                                ":productId",
+                                "supplierinventory"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "productId",
+                                  "value": "1188"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "/api/products/:productId",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseurl}}/api/products/:productId",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "products",
+                        ":productId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "productId",
+                          "value": "1188"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/products/:productId",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "products",
+                            ":productId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "productId",
+                              "value": "1188"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "/api/products",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/api/products?categoryId=1188&search=string&sort=string&page=1&pageSize=50",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "products"
+                  ],
+                  "query": [
+                    {
+                      "key": "categoryId",
+                      "value": "1188"
+                    },
+                    {
+                      "key": "search",
+                      "value": "string"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "string"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "50"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseurl}}/api/products?categoryId=1188&search=string&sort=string&page=1&pageSize=50",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "products"
+                      ],
+                      "query": [
+                        {
+                          "key": "categoryId",
+                          "value": "1188"
+                        },
+                        {
+                          "key": "search",
+                          "value": "string"
+                        },
+                        {
+                          "key": "sort",
+                          "value": "string"
+                        },
+                        {
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "key": "pageSize",
+                          "value": "50"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "addresses",
+          "item": [
+            {
+              "name": "/api/addresses",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseurl}}/api/addresses",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "addresses"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseurl}}/api/addresses",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "addresses"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n  {\n    \"addressId\": 4765,\n    \"userId\": \"string\",\n    \"title\": \"string\",\n    \"fullAddress\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"postalCode\": \"string\",\n    \"country\": \"string\",\n    \"phone\": \"string\",\n    \"isDefault\": true,\n    \"createdAt\": \"1956-12-11T02:06:45.249Z\",\n    \"updatedAt\": \"1986-07-02T03:02:47.553Z\",\n    \"shortAddress\": \"string\",\n    \"displayText\": \"string\"\n  },\n  {\n    \"addressId\": 3043,\n    \"userId\": \"string\",\n    \"title\": \"string\",\n    \"fullAddress\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"postalCode\": \"string\",\n    \"country\": \"string\",\n    \"phone\": \"string\",\n    \"isDefault\": true,\n    \"createdAt\": \"2024-03-12T03:22:14.665Z\",\n    \"updatedAt\": \"1969-03-15T12:10:39.871Z\",\n    \"shortAddress\": \"string\",\n    \"displayText\": \"string\"\n  }\n]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "bookings",
+          "item": [
+            {
+              "name": "apartments",
+              "item": [
+                {
+                  "name": "{apartmentId}",
+                  "item": [
+                    {
+                      "name": "rooms",
+                      "item": [
+                        {
+                          "name": "availability",
+                          "item": [
+                            {
+                              "name": "Get Rooms With Availability",
+                              "request": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                  "raw": "{{baseurl}}/api/bookings/apartments/:apartmentId/rooms/availability?start=1987-12-20T13:56:03.781Z&end=1987-12-20T13:56:03.781Z",
+                                  "host": [
+                                    "{{baseurl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "bookings",
+                                    "apartments",
+                                    ":apartmentId",
+                                    "rooms",
+                                    "availability"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "start",
+                                      "value": "1987-12-20T13:56:03.781Z"
+                                    },
+                                    {
+                                      "key": "end",
+                                      "value": "1987-12-20T13:56:03.781Z"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "apartmentId",
+                                      "value": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "response": [
+                                {
+                                  "name": "OK",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [],
+                                    "url": {
+                                      "raw": "{{baseurl}}/api/bookings/apartments/:apartmentId/rooms/availability?start=1987-12-20T13:56:03.781Z&end=1987-12-20T13:56:03.781Z",
+                                      "host": [
+                                        "{{baseurl}}"
+                                      ],
+                                      "path": [
+                                        "api",
+                                        "bookings",
+                                        "apartments",
+                                        ":apartmentId",
+                                        "rooms",
+                                        "availability"
+                                      ],
+                                      "query": [
+                                        {
+                                          "key": "start",
+                                          "value": "1987-12-20T13:56:03.781Z"
+                                        },
+                                        {
+                                          "key": "end",
+                                          "value": "1987-12-20T13:56:03.781Z"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "apartmentId",
+                                          "value": "string"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "body": ""
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Get Rooms For Apartment",
+                          "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseurl}}/api/bookings/apartments/:apartmentId/rooms",
+                              "host": [
+                                "{{baseurl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "bookings",
+                                "apartments",
+                                ":apartmentId",
+                                "rooms"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "apartmentId",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "name": "OK",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                  "raw": "{{baseurl}}/api/bookings/apartments/:apartmentId/rooms",
+                                  "host": [
+                                    "{{baseurl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "bookings",
+                                    "apartments",
+                                    ":apartmentId",
+                                    "rooms"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "apartmentId",
+                                      "value": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "body": ""
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Get Apartment Details",
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/bookings/apartments/:apartmentId",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "bookings",
+                            "apartments",
+                            ":apartmentId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "apartmentId",
+                              "value": "string"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseurl}}/api/bookings/apartments/:apartmentId",
+                              "host": [
+                                "{{baseurl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "bookings",
+                                "apartments",
+                                ":apartmentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "apartmentId",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Get Apartments",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseurl}}/api/bookings/apartments",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "bookings",
+                        "apartments"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/bookings/apartments",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "bookings",
+                            "apartments"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "rooms",
+              "item": [
+                {
+                  "name": "{roomId}",
+                  "item": [
+                    {
+                      "name": "available",
+                      "item": [
+                        {
+                          "name": "Check Room Availability",
+                          "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseurl}}/api/bookings/rooms/:roomId/available?start=1987-12-20T13:56:03.781Z&end=1987-12-20T13:56:03.781Z",
+                              "host": [
+                                "{{baseurl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "bookings",
+                                "rooms",
+                                ":roomId",
+                                "available"
+                              ],
+                              "query": [
+                                {
+                                  "key": "start",
+                                  "value": "1987-12-20T13:56:03.781Z"
+                                },
+                                {
+                                  "key": "end",
+                                  "value": "1987-12-20T13:56:03.781Z"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "roomId",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "response": [
+                            {
+                              "name": "OK",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                  "raw": "{{baseurl}}/api/bookings/rooms/:roomId/available?start=1987-12-20T13:56:03.781Z&end=1987-12-20T13:56:03.781Z",
+                                  "host": [
+                                    "{{baseurl}}"
+                                  ],
+                                  "path": [
+                                    "api",
+                                    "bookings",
+                                    "rooms",
+                                    ":roomId",
+                                    "available"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "start",
+                                      "value": "1987-12-20T13:56:03.781Z"
+                                    },
+                                    {
+                                      "key": "end",
+                                      "value": "1987-12-20T13:56:03.781Z"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "roomId",
+                                      "value": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "body": ""
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "user",
+              "item": [
+                {
+                  "name": "{userId}",
+                  "item": [
+                    {
+                      "name": "Get Bookings By User",
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/bookings/user/:userId",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "bookings",
+                            "user",
+                            ":userId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "userId",
+                              "value": "1188"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseurl}}/api/bookings/user/:userId",
+                              "host": [
+                                "{{baseurl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "bookings",
+                                "user",
+                                ":userId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "userId",
+                                  "value": "1188"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "multi",
+              "item": [
+                {
+                  "name": "/api/bookings/multi",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"userTestDataId\": 5622,\n  \"apartmentId\": \"string\",\n  \"startDate\": \"2006-02-19T12:46:54.576Z\",\n  \"endDate\": \"1948-07-21T20:40:39.983Z\",\n  \"adults\": 5701,\n  \"children\": 7960,\n  \"rooms\": [\n    {\n      \"roomId\": \"string\",\n      \"name\": \"string\",\n      \"quantity\": 5466,\n      \"pricePerNight\": 1037.0996031742009\n    },\n    {\n      \"roomId\": \"string\",\n      \"name\": \"string\",\n      \"quantity\": 5589,\n      \"pricePerNight\": 1860.3811392973646\n    }\n  ],\n  \"totalPrice\": 3142.504065204108,\n  \"customerName\": \"string\",\n  \"customerEmail\": \"string\",\n  \"customerPhone\": \"string\",\n  \"apartmentTitle\": \"string\",\n  \"apartmentImage\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseurl}}/api/bookings/multi",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "bookings",
+                        "multi"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"userTestDataId\": 5622,\n  \"apartmentId\": \"string\",\n  \"startDate\": \"2006-02-19T12:46:54.576Z\",\n  \"endDate\": \"1948-07-21T20:40:39.983Z\",\n  \"adults\": 5701,\n  \"children\": 7960,\n  \"rooms\": [\n    {\n      \"roomId\": \"string\",\n      \"name\": \"string\",\n      \"quantity\": 5466,\n      \"pricePerNight\": 1037.0996031742009\n    },\n    {\n      \"roomId\": \"string\",\n      \"name\": \"string\",\n      \"quantity\": 5589,\n      \"pricePerNight\": 1860.3811392973646\n    }\n  ],\n  \"totalPrice\": 3142.504065204108,\n  \"customerName\": \"string\",\n  \"customerEmail\": \"string\",\n  \"customerPhone\": \"string\",\n  \"apartmentTitle\": \"string\",\n  \"apartmentImage\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseurl}}/api/bookings/multi",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "bookings",
+                            "multi"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "{bookingId}",
+              "item": [
+                {
+                  "name": "cancel",
+                  "item": [
+                    {
+                      "name": "Cancel Booking Group Per Night",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseurl}}/api/bookings/:bookingId/cancel",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "bookings",
+                            ":bookingId",
+                            "cancel"
+                          ],
+                          "variable": [
+                            {
+                              "key": "bookingId",
+                              "value": "81af7326-9a97-e223-bc6c-b615890c543f"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseurl}}/api/bookings/:bookingId/cancel",
+                              "host": [
+                                "{{baseurl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "bookings",
+                                ":bookingId",
+                                "cancel"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "bookingId",
+                                  "value": "81af7326-9a97-e223-bc6c-b615890c543f"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Get Booking By Id",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseurl}}/api/bookings/:bookingId",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "bookings",
+                        ":bookingId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "bookingId",
+                          "value": "81af7326-9a97-e223-bc6c-b615890c543f"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/bookings/:bookingId",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "bookings",
+                            ":bookingId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "bookingId",
+                              "value": "81af7326-9a97-e223-bc6c-b615890c543f"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Create Booking",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apartmentId\": \"string\",\n  \"roomId\": \"string\",\n  \"startDate\": \"2020-10-05T12:14:04.319Z\",\n  \"endDate\": \"1987-12-01T00:19:55.212Z\",\n  \"guests\": 6774,\n  \"quantity\": 2371,\n  \"totalPrice\": 5370.707032200597,\n  \"apartmentTitle\": \"string\",\n  \"apartmentImage\": \"string\",\n  \"roomName\": \"string\",\n  \"customerName\": \"string\",\n  \"customerEmail\": \"string\",\n  \"customerPhone\": \"string\",\n  \"userTestDataId\": 1935\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseurl}}/api/bookings",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "bookings"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"apartmentId\": \"string\",\n  \"roomId\": \"string\",\n  \"startDate\": \"2020-10-05T12:14:04.319Z\",\n  \"endDate\": \"1987-12-01T00:19:55.212Z\",\n  \"guests\": 6774,\n  \"quantity\": 2371,\n  \"totalPrice\": 5370.707032200597,\n  \"apartmentTitle\": \"string\",\n  \"apartmentImage\": \"string\",\n  \"roomName\": \"string\",\n  \"customerName\": \"string\",\n  \"customerEmail\": \"string\",\n  \"customerPhone\": \"string\",\n  \"userTestDataId\": 1935\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseurl}}/api/bookings",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "bookings"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "bookinggroups",
+          "item": [
+            {
+              "name": "user",
+              "item": [
+                {
+                  "name": "{userId}",
+                  "item": [
+                    {
+                      "name": "Get Booking Groups By User",
+                      "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/bookinggroups/user/:userId",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "bookinggroups",
+                            "user",
+                            ":userId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "userId",
+                              "value": "1188"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseurl}}/api/bookinggroups/user/:userId",
+                              "host": [
+                                "{{baseurl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "bookinggroups",
+                                "user",
+                                ":userId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "userId",
+                                  "value": "1188"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "saved",
+          "item": [
+            {
+              "name": "{userId}",
+              "item": [
+                {
+                  "name": "{apartmentId}",
+                  "item": [
+                    {
+                      "name": "Remove Saved",
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/saved/:userId/:apartmentId",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "saved",
+                            ":userId",
+                            ":apartmentId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "userId",
+                              "value": "1188"
+                            },
+                            {
+                              "key": "apartmentId",
+                              "value": "string"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseurl}}/api/saved/:userId/:apartmentId",
+                              "host": [
+                                "{{baseurl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "saved",
+                                ":userId",
+                                ":apartmentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "userId",
+                                  "value": "1188"
+                                },
+                                {
+                                  "key": "apartmentId",
+                                  "value": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Get Saved With Image And Meta",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseurl}}/api/saved/:userId",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "saved",
+                        ":userId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "userId",
+                          "value": "1188"
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/saved/:userId",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "saved",
+                            ":userId"
+                          ],
+                          "variable": [
+                            {
+                              "key": "userId",
+                              "value": "1188"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "toggle",
+              "item": [
+                {
+                  "name": "Toggle Saved",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"userTestDataId\": 5627,\n  \"apartmentId\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseurl}}/api/saved/toggle",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "saved",
+                        "toggle"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"userTestDataId\": 5627,\n  \"apartmentId\": \"string\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseurl}}/api/saved/toggle",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "saved",
+                            "toggle"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Add Saved",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userTestDataId\": 2048,\n  \"apartmentId\": \"string\",\n  \"apartmentTitle\": \"string\",\n  \"apartmentImage\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseurl}}/api/saved",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "saved"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"userTestDataId\": 2048,\n  \"apartmentId\": \"string\",\n  \"apartmentTitle\": \"string\",\n  \"apartmentImage\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseurl}}/api/saved",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "saved"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "users",
+          "item": [
+            {
+              "name": "addresses",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "/api/users/addresses/:id",
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"title\": \"string\",\n  \"fullAddress\": \"string\",\n  \"city\": \"string\",\n  \"state\": \"string\",\n  \"postalCode\": \"string\",\n  \"country\": \"string\",\n  \"phone\": \"string\",\n  \"isDefault\": true\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseurl}}/api/users/addresses/:id",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "users",
+                            "addresses",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "1188"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"title\": \"string\",\n  \"fullAddress\": \"string\",\n  \"city\": \"string\",\n  \"state\": \"string\",\n  \"postalCode\": \"string\",\n  \"country\": \"string\",\n  \"phone\": \"string\",\n  \"isDefault\": true\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseurl}}/api/users/addresses/:id",
+                              "host": [
+                                "{{baseurl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "users",
+                                "addresses",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "1188"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    },
+                    {
+                      "name": "/api/users/addresses/:id",
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/users/addresses/:id",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "users",
+                            "addresses",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "1188"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseurl}}/api/users/addresses/:id",
+                              "host": [
+                                "{{baseurl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "users",
+                                "addresses",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "1188"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "/api/users/addresses",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseurl}}/api/users/addresses",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "users",
+                        "addresses"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/users/addresses",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "users",
+                            "addresses"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                },
+                {
+                  "name": "/api/users/addresses",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"title\": \"string\",\n  \"fullAddress\": \"string\",\n  \"city\": \"string\",\n  \"state\": \"string\",\n  \"postalCode\": \"string\",\n  \"country\": \"string\",\n  \"phone\": \"string\",\n  \"isDefault\": true\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseurl}}/api/users/addresses",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "users",
+                        "addresses"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"title\": \"string\",\n  \"fullAddress\": \"string\",\n  \"city\": \"string\",\n  \"state\": \"string\",\n  \"postalCode\": \"string\",\n  \"country\": \"string\",\n  \"phone\": \"string\",\n  \"isDefault\": true\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseurl}}/api/users/addresses",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "users",
+                            "addresses"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "paymentmethods",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "/api/users/paymentmethods/:id",
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"label\": \"string\",\n  \"provider\": \"string\",\n  \"token\": \"string\",\n  \"isDefault\": false\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseurl}}/api/users/paymentmethods/:id",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "users",
+                            "paymentmethods",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "1188"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"label\": \"string\",\n  \"provider\": \"string\",\n  \"token\": \"string\",\n  \"isDefault\": false\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseurl}}/api/users/paymentmethods/:id",
+                              "host": [
+                                "{{baseurl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "users",
+                                "paymentmethods",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "1188"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    },
+                    {
+                      "name": "/api/users/paymentmethods/:id",
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/users/paymentmethods/:id",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "users",
+                            "paymentmethods",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "1188"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseurl}}/api/users/paymentmethods/:id",
+                              "host": [
+                                "{{baseurl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "users",
+                                "paymentmethods",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "1188"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "/api/users/paymentmethods",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseurl}}/api/users/paymentmethods",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "users",
+                        "paymentmethods"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/api/users/paymentmethods",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "users",
+                            "paymentmethods"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                },
+                {
+                  "name": "/api/users/paymentmethods",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"label\": \"string\",\n  \"provider\": \"string\",\n  \"token\": \"string\",\n  \"isDefault\": false\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseurl}}/api/users/paymentmethods",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "users",
+                        "paymentmethods"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"label\": \"string\",\n  \"provider\": \"string\",\n  \"token\": \"string\",\n  \"isDefault\": false\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseurl}}/api/users/paymentmethods",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "users",
+                            "paymentmethods"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        ]
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "images",
+      "item": [
+        {
+          "name": "{fileName}",
+          "item": [
+            {
+              "name": "Debug Image Serve",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/images/:fileName",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "images",
+                    ":fileName"
+                  ],
+                  "variable": [
+                    {
+                      "key": "fileName",
+                      "value": "string"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseurl}}/images/:fileName",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "images",
+                        ":fileName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "fileName",
+                          "value": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "dbg",
+      "item": [
+        {
+          "name": "products",
+          "item": [
+            {
+              "name": "test",
+              "item": [
+                {
+                  "name": "/dbg/products/test",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseurl}}/dbg/products/test",
+                      "host": [
+                        "{{baseurl}}"
+                      ],
+                      "path": [
+                        "dbg",
+                        "products",
+                        "test"
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseurl}}/dbg/products/test",
+                          "host": [
+                            "{{baseurl}}"
+                          ],
+                          "path": [
+                            "dbg",
+                            "products",
+                            "test"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "body": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          "// Status Code Validation\r",
+          "pm.test(\"Status code is successful\", function () {\r",
+          "    pm.expect(pm.response.code).to.be.oneOf([200,201,202,204]);\r",
+          "});\r",
+          "\r",
+          "// Response Time Validation\r",
+          "pm.test(\"Response time less than 5 seconds\", function () {\r",
+          "    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+          "});\r",
+          "\r",
+          "// Content-Type Validation\r",
+          "pm.test(\"Response is JSON\", function () {\r",
+          "    pm.response.to.have.header(\"Content-Type\");\r",
+          "});\r",
+          "\r",
+          "// Response Not Empty\r",
+          "pm.test(\"Response body not empty\", function () {\r",
+          "    pm.expect(pm.response.text()).to.not.be.empty;\r",
+          "});\r",
+          "\r",
+          "// Auto Save JWT Token\r",
+          "try {\r",
+          "    var jsonData = pm.response.json();\r",
+          "\r",
+          "    if(jsonData.token){\r",
+          "        pm.environment.set(\"token\", jsonData.token);\r",
+          "    }\r",
+          "\r",
+          "    if(jsonData.id){\r",
+          "        pm.environment.set(\"lastId\", jsonData.id);\r",
+          "    }\r",
+          "\r",
+          "} catch (e) {\r",
+          "    console.log(\"No JSON response\");\r",
+          "}\r",
+          "\r",
+          "pm.test(\"Validate schema\", function () {\r",
+          "\r",
+          "    const schema = {\r",
+          "        \"type\": \"object\",\r",
+          "        \"properties\": {\r",
+          "            \"token\": { \"type\": \"string\" }\r",
+          "        },\r",
+          "        \"required\": [\"token\"]\r",
+          "    };\r",
+          "\r",
+          "    pm.response.to.have.jsonSchema(schema);\r",
+          "});"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
 }
