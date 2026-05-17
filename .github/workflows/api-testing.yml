@@ -21,6 +21,18 @@ jobs:
         with:
           node-version: 20
 
+      - name: Verify Working Directory
+        run: |
+          echo Current Directory:
+          pwd
+          echo -------------------------
+          dir
+
+      - name: Verify Postman Folder
+        run: |
+          echo Checking Postman Folder
+          dir postman
+
       - name: Install Newman
         run: npm install -g newman newman-reporter-html
 
@@ -33,6 +45,12 @@ jobs:
           -r cli,html
           --reporter-html-export reports/newman-report.html
 
+      - name: Upload Newman Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: newman-report
+          path: reports/newman-report.html
+
   performance-testing:
 
     runs-on: self-hosted
@@ -42,8 +60,23 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Verify Working Directory
+        run: |
+          echo Current Directory:
+          pwd
+          echo -------------------------
+          dir
+
+      - name: Verify k6 Folder
+        run: |
+          echo Checking k6 Folder
+          dir k6
+
       - name: Install k6
         run: choco install k6 -y
+
+      - name: Verify k6 Installation
+        run: k6 version
 
       - name: Run k6 Test
         run: |
