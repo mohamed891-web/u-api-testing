@@ -35,7 +35,7 @@ jobs:
 
       - name: Run Postman Collection
         run: |
-          newman run postman/UltivisionApi.postman_collection.json --timeout-request 30000 --delay-request 100 -r cli,html --reporter-html-export reports/newman-report.html
+          newman run postman/UltivisionApi.postman_collection.json --timeout-request 30000 --delay-request 100 -r cli -r html --reporter-html-export reports/newman-report.html
 
   performance-testing:
 
@@ -46,9 +46,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install k6
-        run: choco install k6 -y
-
       - name: Show Current Directory
         run: pwd
 
@@ -57,4 +54,4 @@ jobs:
 
       - name: Run k6 Test
         run: |
-          k6 run .\k6\soak-test.js
+          "C:\Program Files\k6\k6.exe" run .\k6\soak-test.js
