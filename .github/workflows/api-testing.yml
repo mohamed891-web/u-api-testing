@@ -1,7 +1,6 @@
 name: API Automation Pipeline
 
 on:
-
   push:
     branches:
       - main
@@ -23,24 +22,20 @@ jobs:
           node-version: 20
 
       - name: Install Newman
-        run: |
-          npm install -g newman
-          npm install -g newman-reporter-html
+        run: npm install -g newman newman-reporter-html
 
       - name: Create Reports Folder
         run: mkdir reports
 
       - name: Run Postman Collection
-        run: |
-          newman run UltivisionApi.postman_collection.json \
-          -e Local.postman_environment.json \
-          -r cli,html \
+        run: >
+          newman run postman/UltivisionApi.postman_collection.json
+          -r cli,html
           --reporter-html-export reports/newman-report.html
-
 
   performance-testing:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
 
@@ -48,17 +43,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install k6
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y gnupg software-properties-common
-
-          curl -s https://dl.k6.io/key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/k6-archive-keyring.gpg
-
-          echo "deb [signed-by=/usr/share/keyrings/k6-archive-keyring.gpg] https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
-
-          sudo apt-get update
-          sudo apt-get install -y k6
+        run: choco install k6 -y
 
       - name: Run k6 Test
         run: |
-          k6 run soak-test.js
+          k6 run k6/soak-test.js
